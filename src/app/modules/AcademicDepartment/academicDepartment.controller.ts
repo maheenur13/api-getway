@@ -5,7 +5,7 @@ import { AcademicDepartmentService } from './academicDepartment.service';
 import sendResponse from '../../../shared/response';
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
-  const result = await AcademicDepartmentService.createDepartment(req.body);
+  const result = await AcademicDepartmentService.createDepartment(req);
   sendResponse(res, result);
 });
 
