@@ -5,8 +5,6 @@ import { AcademicFacultyService } from './academicFaculty.service';
 import sendResponse from '../../../shared/response';
 
 const createFaculty = catchAsync(async (req: Request, res: Response) => {
-  console.log('here');
-
   const result = await AcademicFacultyService.createFaculty(req);
   sendResponse(res, result);
 });

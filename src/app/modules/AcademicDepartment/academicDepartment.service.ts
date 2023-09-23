@@ -3,15 +3,12 @@ import { IGenericResponse } from '../../../interfaces/common';
 import { CoreService as HttpService } from '../../../shared/axios';
 
 const createDepartment = async (req: Request): Promise<IGenericResponse> => {
-  console.log('here');
-  console.log(req.headers);
-
   const response: IGenericResponse = await HttpService.post('/academic-departments', req.body, {
     headers: {
       Authorization: req.headers.authorization
     }
   });
-  console.log(response);
+
   return response;
 };
 

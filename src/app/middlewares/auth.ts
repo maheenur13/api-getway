@@ -29,12 +29,9 @@ const auth =
       resolve(verifiedUser);
     })
       .then(() => {
-        console.log('no');
-
         next();
       })
       .catch((err) => {
-        console.log(err);
         next(err);
       });
   };

@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use('/api/v1', routes);
 
 app.get('/', (req, res) => {
-  console.log('ok');
+  // console.log('ok');
 
   res.send('server started successfully!');
 });
