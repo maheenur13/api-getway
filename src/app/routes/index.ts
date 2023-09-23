@@ -9,6 +9,7 @@ import { courseRoutes } from '../modules/Course/course.routes';
 import { facultyRoutes } from '../modules/Faculty/faculty.routes';
 import { managementDepartmentRoutes } from '../modules/ManagementDepartment/managementDepartment.routes';
 import { offeredCourseRoutes } from '../modules/OfferedCourse/offeredCourse.routes';
+import { offeredCourseClassScheduleRoutes } from '../modules/OfferedCourseClassSchedule/offeredCourseClassSchedule.routes';
 
 const router = express.Router();
 
@@ -52,6 +53,10 @@ const moduleRoutes = [
   {
     path: '/offered-courses',
     routes: offeredCourseRoutes
+  },
+  {
+    path: '/offered-course-class-schedules',
+    routes: offeredCourseClassScheduleRoutes
   }
 ];
 
