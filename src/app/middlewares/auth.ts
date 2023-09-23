@@ -14,7 +14,7 @@ const auth =
         return reject(new ApiError(httpStatus.UNAUTHORIZED, 'Unauthorized'));
       }
 
-      const verifiedUser: IAuthUser = JwtHelper.verifyToken(token);
+      const verifiedUser: IAuthUser = JwtHelper.verifyToken(token, reject);
 
       if (!verifiedUser) {
         return reject(new ApiError(httpStatus.UNAUTHORIZED, 'Unauthorized'));
@@ -28,8 +28,15 @@ const auth =
 
       resolve(verifiedUser);
     })
-      .then(() => next())
-      .catch((err) => next(err));
+      .then(() => {
+        console.log('no');
+
+        next();
+      })
+      .catch((err) => {
+        console.log(err);
+        next(err);
+      });
   };
 
 export default auth;
