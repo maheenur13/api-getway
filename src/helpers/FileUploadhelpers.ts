@@ -4,6 +4,14 @@ import * as fs from 'fs';
 import { ICloudinaryResponse, IUploadFile } from '../interfaces/file';
 import config from '../config';
 
+// import {v2 as cloudinary} from 'cloudinary';
+
+// cloudinary.config({
+//   cloud_name: 'drzwobbtz',
+//   api_key: '158261141343597',
+//   api_secret: 'MuMYjGvOmhhzbiY_aUL54a5hkUw'
+// });
+
 cloudinary.config({
   cloud_name: config.cloudinary.cloudName,
   api_key: config.cloudinary.apiKey,
