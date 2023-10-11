@@ -84,6 +84,7 @@ const createFaculty = async (req: Request): Promise<IGenericResponse> => {
 
 const createAdmin = async (req: Request): Promise<IGenericResponse> => {
   const file = req.file as IUploadFile;
+  console.log({ req });
 
   const uploadedProfileImage = await FileUploadHelper.uploadToCloudinary(file);
 

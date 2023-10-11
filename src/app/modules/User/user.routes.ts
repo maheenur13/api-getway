@@ -32,6 +32,8 @@ router.post(
   auth(ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.ADMIN),
   FileUploadHelper.upload.single('file'),
   (req: Request, res: Response, next: NextFunction) => {
+    console.log('here');
+
     req.body = UserValidation.createAdmin.parse(JSON.parse(req.body.data));
     return UserController.createAdmin(req, res, next);
   }
